@@ -14,11 +14,24 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: docker.io/antenehse/udagram-frontend:v6
-        ports: 
+        image: docker.io/beakalyk/udagram-frontend:local
+        imagePullPolicy : always
+        ports:
         - containerPort: 80
         resources:
-          limits:
-            cpu: 1000m
           requests:
-            cpu: 500m
+           memory: "128Mi"
+           cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"
+        envFrom:
+          - secretRef:
+              name: env-secret
+            configMapRef:
+              name: env-config
+            secretRef:
+              name: aws-secret
+        ports:
+          - containerPort: 8080
+
