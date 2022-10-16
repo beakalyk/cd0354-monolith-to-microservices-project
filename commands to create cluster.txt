@@ -1,0 +1,21 @@
+#createing cluster
+aws eks create-cluster --region us-west-2 --name my-cluster --kubernetes-version 1.23 --role-arn arn:aws:iam::920523284878:role/EKSClusterRole --resources-vpc-config subnetIds=subnet-02c6a61feaceff469,subnet-0703c177ce4cfab6a,subnet-0703c177ce4cfab6a,subnet-00ab80962e86786f4,securityGroupIds=sg-09701d54489bfadd2 
+
+#creating cluster status
+aws eks describe-cluster --region us-west-2 --name my-cluster --query "cluster.status"
+
+
+aws eks update-kubeconfig --region us-west-2 --name my-cluster 
+
+
+kubectl apply -f ./configurations/aws-secret.yaml
+kubectl apply -f ./configurations/env-secret.yaml
+kubectl apply -f ./configurations/env-configmap.yaml
+
+
+kubectl apply -f ./configurations/api-feed-deployment.yaml
+kubectl apply -f ./configurations/api-user-deployment.yaml
+kubectl apply -f ./configurations/frontend-deployment.yaml
+kubectl apply -f ./configurations/reverseproxy-deployment.yaml
+
+
