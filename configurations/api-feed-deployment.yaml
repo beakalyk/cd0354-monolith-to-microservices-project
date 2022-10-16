@@ -2,23 +2,32 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: api-feed
+  labels:
+    run: api-feed
+
 spec:
+  replicas: 1
   selector:
     matchLabels:
       run: api-feed
-  replicas: 1
+
   template:
     metadata:
       labels:
         run: api-feed
+
     spec:
       containers:
       - name: api-feed
-        image: beakalyk/udagram-api-feed:v4a
-        ports:
-        - containerPort: 80
+        image: beakalyk/udagram-api-feed:v5a
+        imagePullPolicy: Always
         resources:
-          limits:
-            cpu: 1000m
           requests:
-            cpu: 200m
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
+      restartPolicy: Always

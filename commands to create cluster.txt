@@ -19,3 +19,20 @@ kubectl apply -f ./configurations/frontend-deployment.yaml
 kubectl apply -f ./configurations/reverseproxy-deployment.yaml
 
 
+kubectl apply -f ./configurations/api-feed-service.yaml
+kubectl apply -f ./configurations/api-user-service.yaml
+kubectl apply -f ./configurations/frontend-service.yaml
+kubectl apply -f ./configurations/reverseproxy-service.yaml
+
+
+kubectl get deployments
+
+
+kubectl expose deployment frontend --type=LoadBalancer --name=publicfrontend
+
+kubectl get services 
+kubectl get pods 
+
+
+
+

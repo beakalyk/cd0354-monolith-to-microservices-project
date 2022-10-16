@@ -2,23 +2,32 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: api-user
+  labels:
+    run: api-user
+
 spec:
+  replicas: 1
   selector:
     matchLabels:
-      run: api-user
-  replicas: 1
+      app: api-user
+
   template:
     metadata:
       labels:
-        run: api-user
+        app: api-user
+
     spec:
       containers:
-      - name: api-feed
-        image: docker.io/beakalyk/udagram-api-user:v4a
-        ports:
-        - containerPort: 80
+      - name: api-user
+        image: beakalyk/udagram-api-user:v5a
+        imagePullPolicy: Always
         resources:
-          limits:
-            cpu: 1000m
           requests:
-            cpu: 200m
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
+      restartPolicy: Always
