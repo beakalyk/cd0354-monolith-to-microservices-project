@@ -2,11 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
+  labels:
+    run: frontend
 spec:
   selector:
     matchLabels:
       run: frontend
-  replicas: 2
+  replicas: 4
   template:
     metadata:
       labels:
@@ -14,11 +16,15 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: docker.io/beakalyk/udagram-frontend:local
+        image: beakalyk/udagram-frontend:local
+        imagePullPolicy: Always
         ports: 
         - containerPort: 80
         resources:
           limits:
-            cpu: 1000m
+            cpu: "1000m"
+            memory: "1024Mi"
           requests:
-            cpu: 500m
+            cpu: "250m"
+            memory: "64Mi"
+

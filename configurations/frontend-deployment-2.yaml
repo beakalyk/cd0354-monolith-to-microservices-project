@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend2
+  labels:
+    run: frontend2
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: frontend2
+
+  template:
+    metadata:
+      labels:
+        run: frontend2
+
+    spec:
+      containers:
+      - name: frontend2
+        image: ugogineering/udagram-frontend-two:v4a
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+      restartPolicy: Always
