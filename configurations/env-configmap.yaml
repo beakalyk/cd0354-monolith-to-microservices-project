@@ -3,8 +3,8 @@ kind: ConfigMap
 metadata:
   name: env-config
 data:
-  POSTGRES_HOST: postgres.cekoss1eywno.us-east-1.rds.amazonaws.com
-  POSTGRES_DB: mypostgres-920523284878
+  POSTGRES_HOST: postgres.cw99bhjjiazm.us-west-2.rds.amazonaws.com
+  POSTGRES_DB: postgres
   AWS_BUCKET: c03-bucket
   AWS_REGION: us-east-1
   JWT_SECRET: testing

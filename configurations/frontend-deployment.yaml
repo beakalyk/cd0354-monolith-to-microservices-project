@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: beakalyk/udagram-frontend:v5a
+        image: beakalyk/udagram-frontend:v6a
         imagePullPolicy: Always
         resources:
           requests:
