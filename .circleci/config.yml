@@ -29,8 +29,8 @@ jobs:
             echo "-------------- Pushing images to dockerhub-------"
             docker push beakalyk/udagram-api-feed:v1a
             docker push beakalyk/udagram-api-user:v1a
-            docker push beakalyk/udagram-frontend:v1a
-            docker push beakalyk/reverseproxy:v2a
+            docker push beakalyk/udagram-frontend:v2a
+            docker push beakalyk/reverseproxy:v1a
             
 workflows:
   default:
