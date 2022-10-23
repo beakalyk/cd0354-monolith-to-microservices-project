@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: frontend2
-        image: ugogineering/udagram-frontend-two:v4a
+        image: ugogineering/udagram-frontend:local
         imagePullPolicy: Always
         resources:
           requests:

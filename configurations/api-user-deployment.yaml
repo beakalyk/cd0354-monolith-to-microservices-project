@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: api-user
-        image: beakalyk/udagram-api-user:v5a
+        image: beakalyk/udagram-api-user:v1a
         imagePullPolicy: Always
         resources:
           requests:

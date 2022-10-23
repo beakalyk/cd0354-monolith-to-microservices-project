@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: reverseproxy
-        image: beakalyk/reverseproxy:v5a
+        image: beakalyk/reverseproxy:v1a
         imagePullPolicy: Always
         resources:
           requests:

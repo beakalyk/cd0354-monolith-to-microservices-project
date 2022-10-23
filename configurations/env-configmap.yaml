@@ -6,7 +6,7 @@ data:
   POSTGRES_HOST: postgres.cw99bhjjiazm.us-west-2.rds.amazonaws.com
   POSTGRES_DB: postgres
   AWS_BUCKET: c03-bucket
-  AWS_REGION: us-east-1
+  AWS_REGION: us-west-2
   JWT_SECRET: testing
   URL: http://localhost:8100
 

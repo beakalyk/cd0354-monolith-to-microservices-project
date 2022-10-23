@@ -19,12 +19,12 @@ spec:
     spec:
       containers:
       - name: api-feed
-        image: beakalyk/udagram-api-feed:v5a
+        image: beakalyk/udagram-api-feed:v1a
         imagePullPolicy: Always
         resources:
           requests:
-            memory: "200Mi"
-            cpu: "250m"
+            memory: "300Mi"
+            cpu: "350m"
           limits:
             memory: "2024Mi"
             cpu: "500m"
