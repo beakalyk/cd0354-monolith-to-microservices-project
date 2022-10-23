@@ -3,18 +3,18 @@ kind: Deployment
 metadata:
   name: api-feed
   labels:
-    run: api-feed
+    app: api-feed
 
 spec:
   replicas: 1
   selector:
     matchLabels:
-      run: api-feed
+      app: api-feed
 
   template:
     metadata:
       labels:
-        run: api-feed
+        app: api-feed
 
     spec:
       containers:

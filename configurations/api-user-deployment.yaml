@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: api-user
   labels:
-    run: api-user
+    app: api-user
 
 spec:
   replicas: 1
