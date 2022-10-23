@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: api-feed
-        image: beakalyk/udagram-api-feed:v1a
+        image: beakalyk/udagram-api-feed:v3a
         imagePullPolicy: Always
         resources:
           requests:
